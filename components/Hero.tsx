@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
           <span className="inline-block py-1 px-3 rounded-full bg-rose-900/50 text-rose-200 text-xs md:text-sm font-semibold tracking-wide border border-rose-500/30 mb-2">
             MÉTODO VALIDADO
           </span>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
             Seu Green Card por casamento, <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-100 to-white">
               do jeito certo e simples.
@@ -75,13 +75,13 @@ export const Hero: React.FC = () => {
           <PaymentIcons />
 
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-[10px] md:text-sm text-white mt-2 px-2 font-medium">
-            <span className="flex items-center gap-1"><PlayCircle className="w-3 h-3 md:w-4 md:h-4" /> Aulas completas</span>
+            <span className="flex items-center gap-1"><PlayCircle className="w-3 h-3 md:w-4 md:h-4" /> <span className="text-white">Aulas completas</span></span>
             <span className="hidden md:inline">•</span>
-            <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3 md:w-4 md:h-4" /> Checklists exclusivos</span>
+            <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3 md:w-4 md:h-4" /> <span className="text-white">Checklists exclusivos</span></span>
             <span className="hidden md:inline">•</span>
-            <span className="flex items-center gap-1"><MessageCircle className="w-3 h-3 md:w-4 md:h-4" /> Consultoria individual</span>
+            <span className="flex items-center gap-1"><MessageCircle className="w-3 h-3 md:w-4 md:h-4" /> <span className="text-white">Consultoria individual</span></span>
             <span className="hidden md:inline">•</span>
-            <span className="flex items-center gap-1">⚡ Acesso imediato</span>
+            <span className="flex items-center gap-1">⚡ <span className="text-white">Acesso imediato</span></span>
           </div>
 
            {/* WhatsApp Button (Moved below features) */}
