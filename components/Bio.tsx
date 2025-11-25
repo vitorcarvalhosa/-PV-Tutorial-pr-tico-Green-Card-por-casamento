@@ -11,7 +11,9 @@ export const Bio: React.FC = () => {
                     {/* Specific image requested by user */}
                     <img 
                         src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/image-1-1754918689210.jpg" 
-                        alt="Gleice Oliveira" 
+                        alt="Gleice Oliveira Especialista em Green Card por Casamento" 
+                        title="Gleice Oliveira - Fundadora da RG Forms"
+                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                     />
                     <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-slate-900/90 to-transparent p-6 pt-20">
@@ -26,13 +28,13 @@ export const Bio: React.FC = () => {
                 <div className="w-20 h-1 bg-rose-700 rounded mx-auto md:mx-0"></div>
                 <div className="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed">
                     <p>
-                        Gleice Oliveira é fundadora da RG Forms e especialista em processos de green card por casamento. Com mais de 5 anos de experiência e <strong className="text-rose-700">100% de aprovação</strong> em seus acompanhamentos.
+                        Gleice Oliveira é fundadora da RG Forms e especialista em processos de <strong className="text-rose-900">green card por casamento</strong>. Com mais de 5 anos de experiência e <strong className="text-rose-700">100% de aprovação</strong> em seus acompanhamentos.
                     </p>
                     <p>
-                        Apesar de não ser advogada, sua atuação prática, empática e extremamente organizada tornou seu método referência entre imigrantes que querem fazer o processo por conta própria.
+                        Apesar de não ser advogada, sua atuação prática, empática e extremamente organizada tornou seu método referência entre imigrantes brasileiras que querem fazer o processo por conta própria.
                     </p>
                     <p>
-                        Sua missão é descomplicar o processo e empoderar outras mulheres a viverem legalmente nos EUA, com dignidade, tranquilidade e orgulho da própria conquista.
+                        Sua missão é descomplicar o processo de imigração e empoderar outras mulheres a viverem legalmente nos EUA, com dignidade, tranquilidade e orgulho da própria conquista.
                     </p>
                 </div>
             </div>

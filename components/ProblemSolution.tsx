@@ -25,7 +25,7 @@ export const ProblemSolution: React.FC = () => {
                 <span className="text-rose-900">exatamente o que fazer</span>
                 </h2>
                 <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-                Chega de dúvidas e informações soltas. Com nossos checklists e arquivos prontos, você organiza todo o seu processo com confiança, evita esquecimentos e envia tudo do jeito certo.
+                Chega de dúvidas e informações soltas. Com nossos checklists e arquivos prontos, você organiza todo o seu processo de Green Card com confiança, evita esquecimentos e envia tudo do jeito certo para a imigração (USCIS).
                 </p>
             </div>
 
@@ -36,7 +36,7 @@ export const ProblemSolution: React.FC = () => {
                     </div>
                     <div>
                         <h3 className="font-bold text-slate-900 text-sm md:text-base">Checklists prontos e editáveis</h3>
-                        <p className="text-xs md:text-sm text-slate-600">Para cada etapa do processo, garantindo que nada fique para trás.</p>
+                        <p className="text-xs md:text-sm text-slate-600">Para cada etapa do processo, garantindo que nenhum formulário ou evidência fique para trás.</p>
                     </div>
                 </li>
                 <li className="flex gap-4 p-4 bg-slate-50 rounded-lg border border-slate-100 hover:border-rose-200 transition-colors">
@@ -45,7 +45,7 @@ export const ProblemSolution: React.FC = () => {
                     </div>
                     <div>
                         <h3 className="font-bold text-slate-900 text-sm md:text-base">Modelos atualizados</h3>
-                        <p className="text-xs md:text-sm text-slate-600">Documentos conforme os padrões mais recentes da imigração americana.</p>
+                        <p className="text-xs md:text-sm text-slate-600">Documentos conforme os padrões mais recentes da imigração americana (USCIS).</p>
                     </div>
                 </li>
                 <li className="flex gap-4 p-4 bg-slate-50 rounded-lg border border-slate-100 hover:border-rose-200 transition-colors">
@@ -54,7 +54,7 @@ export const ProblemSolution: React.FC = () => {
                     </div>
                     <div>
                         <h3 className="font-bold text-slate-900 text-sm md:text-base">Organização clara</h3>
-                        <p className="text-xs md:text-sm text-slate-600">Veja visualmente o que falta e o que já está pronto no seu processo.</p>
+                        <p className="text-xs md:text-sm text-slate-600">Veja visualmente o que falta e o que já está pronto no seu processo de ajuste de status.</p>
                     </div>
                 </li>
             </ul>
@@ -84,7 +84,11 @@ export const ProblemSolution: React.FC = () => {
              <div className="absolute inset-0 bg-gradient-to-tr from-rose-100 to-slate-100 rounded-2xl transform rotate-3 scale-110 md:scale-150 -z-10 opacity-50"></div>
              <img 
                 src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Mockup-arquivos.png"
-                alt="Mockup de checklists e documentos"
+                alt="Kit completo de documentos e checklists para Green Card por Casamento"
+                title="Materiais do Green Card Simplificado"
+                width="600"
+                height="600"
+                loading="lazy"
                 className="relative z-10 w-full scale-[1.35] md:scale-[1.8] max-w-none h-auto object-contain drop-shadow-2xl hover:scale-[1.05] md:hover:scale-[1.85] transition-transform duration-500 origin-center"
              />
           </div>

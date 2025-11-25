@@ -24,7 +24,7 @@ export const Testimonials: React.FC = () => {
             <h2 className="text-2xl md:text-4xl font-bold mb-4">
                 Quem seguiu o passo a passo… <span className="text-rose-400">conseguiu</span>
             </h2>
-            <p className="text-sm md:text-base text-slate-400">Mensagens reais de quem aplicou com o nosso método.</p>
+            <p className="text-sm md:text-base text-slate-400">Mensagens reais de quem aplicou para o Green Card com o nosso método.</p>
         </div>
 
         {/* Whatsapp Prints Grid */}
@@ -38,9 +38,12 @@ export const Testimonials: React.FC = () => {
                 >
                     <img 
                         src={img} 
-                        alt={`Depoimento ${idx + 1}`} 
+                        alt={`Depoimento de aprovação Green Card - Caso ${idx + 1}`}
+                        title={`Resultado real Green Card Simplificado ${idx + 1}`}
                         className="w-full h-auto object-contain"
                         loading="lazy"
+                        width="400"
+                        height="600"
                     />
                 </div>
             ))}
@@ -54,7 +57,8 @@ export const Testimonials: React.FC = () => {
                 <div className="aspect-[9/16] bg-black relative">
                     <video 
                         controls 
-                        preload="metadata"
+                        preload="none"
+                        poster=""
                         className="w-full h-full object-cover"
                     >
                         <source src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345389562.mp4" type="video/mp4" />
@@ -72,7 +76,7 @@ export const Testimonials: React.FC = () => {
                  <div className="aspect-[9/16] bg-black relative">
                     <video 
                         controls 
-                        preload="metadata"
+                        preload="none"
                         className="w-full h-full object-cover"
                     >
                         <source src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345400912.mp4" type="video/mp4" />
@@ -90,7 +94,7 @@ export const Testimonials: React.FC = () => {
                  <div className="aspect-[9/16] bg-black relative">
                     <video 
                         controls 
-                        preload="metadata"
+                        preload="none"
                         className="w-full h-full object-cover"
                     >
                         <source src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345408958.mp4" type="video/mp4" />
