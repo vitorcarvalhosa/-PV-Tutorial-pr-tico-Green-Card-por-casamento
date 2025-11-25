@@ -57,11 +57,10 @@ export const Testimonials: React.FC = () => {
                 <div className="aspect-[9/16] bg-black relative">
                     <video 
                         controls 
-                        preload="none"
-                        poster=""
+                        preload="metadata"
                         className="w-full h-full object-cover"
                     >
-                        <source src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345389562.mp4" type="video/mp4" />
+                        <source src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345389562.mp4#t=0.1" type="video/mp4" />
                         Seu navegador não suporta o elemento de vídeo.
                     </video>
                 </div>
@@ -76,10 +75,10 @@ export const Testimonials: React.FC = () => {
                  <div className="aspect-[9/16] bg-black relative">
                     <video 
                         controls 
-                        preload="none"
+                        preload="metadata"
                         className="w-full h-full object-cover"
                     >
-                        <source src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345400912.mp4" type="video/mp4" />
+                        <source src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345400912.mp4#t=0.1" type="video/mp4" />
                         Seu navegador não suporta o elemento de vídeo.
                     </video>
                 </div>
@@ -94,10 +93,10 @@ export const Testimonials: React.FC = () => {
                  <div className="aspect-[9/16] bg-black relative">
                     <video 
                         controls 
-                        preload="none"
+                        preload="metadata"
                         className="w-full h-full object-cover"
                     >
-                        <source src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345408958.mp4" type="video/mp4" />
+                        <source src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345408958.mp4#t=0.1" type="video/mp4" />
                         Seu navegador não suporta o elemento de vídeo.
                     </video>
                 </div>
