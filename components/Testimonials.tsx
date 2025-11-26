@@ -1,52 +1,54 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Button } from './Button';
 import { Play } from 'lucide-react';
 
 interface LazyVideoCardProps {
-    src: string;
+    videoId: string;
     title: string;
     quote: string;
 }
 
-// Internal component to handle lazy-video interaction (Facade pattern for MP4)
-const LazyVideoCard: React.FC<LazyVideoCardProps> = ({ src, title, quote }) => {
-    const [isPlaying, setIsPlaying] = useState(false);
-    const videoRef = useRef<HTMLVideoElement>(null);
+// Internal component to handle lazy-video interaction (Facade pattern for YouTube Shorts)
+const LazyVideoCard: React.FC<LazyVideoCardProps> = ({ videoId, title, quote }) => {
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const handlePlay = () => {
-        if (videoRef.current) {
-            videoRef.current.play();
-            setIsPlaying(true);
-        }
+        setIsLoaded(true);
     };
 
     return (
         <div className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-rose-500/50 transition-colors group flex flex-col h-full">
             <div className="aspect-[9/16] bg-black relative">
-                <video 
-                    ref={videoRef}
-                    preload="metadata" // Need metadata for the #t=0.1 thumbnail to work
-                    className="w-full h-full object-cover"
-                    controls={isPlaying}
-                    playsInline
-                    onPause={() => setIsPlaying(false)}
-                    onPlay={() => setIsPlaying(true)}
-                >
-                    <source src={`${src}#t=0.1`} type="video/mp4" />
-                    Seu navegador não suporta o elemento de vídeo.
-                </video>
-
-                {/* Custom Play Button Overlay - Disappears when playing */}
-                {!isPlaying && (
+                {!isLoaded ? (
                     <button 
                         onClick={handlePlay}
                         className="absolute inset-0 w-full h-full flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors z-10 cursor-pointer"
                         aria-label={`Reproduzir depoimento: ${title}`}
                     >
-                        <div className="w-16 h-16 bg-rose-600/90 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm">
+                        {/* Thumbnail - YouTube (Using hqdefault covering the vertical area) */}
+                        <img 
+                            src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`} 
+                            alt={`Thumbnail ${title}`}
+                            className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                            loading="lazy"
+                            width="480"
+                            height="360"
+                        />
+
+                        <div className="w-16 h-16 bg-rose-600/90 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm relative z-20">
                             <Play className="w-8 h-8 text-white fill-white ml-1" />
                         </div>
                     </button>
+                ) : (
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&fs=1`}
+                        title={title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full"
+                    ></iframe>
                 )}
             </div>
             <div className="p-4 md:p-6 flex-1 flex flex-col justify-center">
@@ -63,28 +65,28 @@ export const Testimonials: React.FC = () => {
   };
 
   const feedbackImages = [
-    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-1.jpg",
-    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-2.jpg",
-    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-3.jpg",
-    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-4.jpg",
-    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedbacks-5.jpg",
-    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-6.png",
-    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/IMG_7725.jpg"
+    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-1.webp",
+    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-2.webp",
+    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-3.webp",
+    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-4.webp",
+    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-5.webp",
+    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-6.webp",
+    "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-7.webp"
   ];
 
   const videos = [
       {
-          src: "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345389562.mp4",
+          videoId: "MoAs9SWvoRc", // ID extracted from https://youtube.com/shorts/MoAs9SWvoRc?feature=share
           title: "“Green Card aprovado em 4 meses”",
           quote: "Se não fosse pela Gleice, provavelmente ela não teria conseguido tão rápido."
       },
       {
-          src: "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345400912.mp4",
+          videoId: "i5MN_a31MC8", // ID extracted from https://youtube.com/shorts/i5MN_a31MC8?feature=share
           title: "“A Gleice me deu muita clareza e tranquilidade”",
           quote: "O juridiquês é muito difícil, mas a Gleice faz questão de simplificar tudo pra gente."
       },
       {
-          src: "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345408958.mp4",
+          videoId: "i60cRgK4zdY", // ID extracted from https://youtube.com/shorts/i60cRgK4zdY?feature=share
           title: "“Agora posso dizer que sou uma residente permanente”",
           quote: "Graças a Gleice esse sonho se realizou e foi muito importante ela estar do meu lado."
       }
@@ -123,12 +125,12 @@ export const Testimonials: React.FC = () => {
             ))}
         </div>
 
-        {/* Video Testimonials */}
+        {/* Video Testimonials (YouTube Shorts) */}
         <div className="grid md:grid-cols-3 gap-8 md:gap-8 mb-10 md:mb-12">
             {videos.map((video, idx) => (
                 <LazyVideoCard 
                     key={idx}
-                    src={video.src}
+                    videoId={video.videoId}
                     title={video.title}
                     quote={video.quote}
                 />

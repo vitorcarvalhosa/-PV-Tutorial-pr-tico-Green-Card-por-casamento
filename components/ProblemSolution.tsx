@@ -83,12 +83,13 @@ export const ProblemSolution: React.FC = () => {
           <div className="relative flex justify-center items-center order-1 md:order-2 mb-0 md:mb-0">
              <div className="absolute inset-0 bg-gradient-to-tr from-rose-100 to-slate-100 rounded-2xl transform rotate-3 scale-110 md:scale-150 -z-10 opacity-50"></div>
              <img 
-                src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Mockup-arquivos.png"
+                src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Mockup-arquivos.webp"
                 alt="Kit completo de documentos e checklists para Green Card por Casamento"
                 title="Materiais do Green Card Simplificado"
                 width="600"
                 height="600"
                 loading="lazy"
+                decoding="async"
                 className="relative z-10 w-full scale-[1.35] md:scale-[1.8] max-w-none h-auto object-contain drop-shadow-2xl hover:scale-[1.05] md:hover:scale-[1.85] transition-transform duration-500 origin-center"
              />
           </div>

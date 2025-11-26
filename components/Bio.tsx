@@ -10,10 +10,11 @@ export const Bio: React.FC = () => {
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl relative group max-w-sm mx-auto md:max-w-none">
                     {/* Specific image requested by user */}
                     <img 
-                        src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/image-1-1754918689210.jpg" 
+                        src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Gleice-Perfil.webp" 
                         alt="Gleice Oliveira Especialista em Green Card por Casamento" 
                         title="Gleice Oliveira - Fundadora da RG Forms"
                         loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                     />
                     <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-slate-900/90 to-transparent p-6 pt-20">
