@@ -4,9 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- PERFORMANCE CRÍTICA: Background Color (Critical CSS) -->
-    <!-- Pinta o fundo imediatamente para evitar tela branca (FCP/LCP optimization) -->
-    <style>body { background-color: #580816; margin: 0; }</style>
+    <!-- PERFORMANCE CRÍTICA: Critical CSS (Background & Typography) -->
+    <!-- Define estilos visuais imediatos para evitar tela branca ou texto desformatado enquanto o Tailwind baixa -->
+    <style>
+      body { 
+        background-color: #580816; 
+        margin: 0; 
+        font-family: sans-serif; /* Fallback imediato */
+      }
+      /* Estilos críticos para o H1 da Hero (Mobile First) */
+      h1 {
+        color: #ffffff;
+        font-weight: 800;
+        line-height: 1.25;
+        font-size: 1.875rem; /* text-3xl equivalente */
+      }
+      /* Ajuste para Desktop */
+      @media (min-width: 768px) {
+        h1 { font-size: 3rem; } /* text-5xl equivalente */
+      }
+      /* Estilos críticos para o subtítulo */
+      p.hero-text {
+        color: #ffe4e6; /* rose-100 */
+        font-size: 1rem;
+      }
+    </style>
 
     <!-- PERFORMANCE CRÍTICA: Preconnect e Preload LCP -->
     <!-- Estabelece conexão antecipada com o YouTube e baixa a imagem principal -->
