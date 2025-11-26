@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- PERFORMANCE CRÍTICA: Background Color (Critical CSS) -->
-    <!-- Define a cor de fundo imediatamente para evitar tela branca enquanto o CSS carrega -->
+    <!-- Pinta o fundo imediatamente para evitar tela branca (FCP/LCP optimization) -->
     <style>body { background-color: #580816; margin: 0; }</style>
 
     <!-- PERFORMANCE CRÍTICA: Preconnect e Preload LCP -->
+    <!-- Estabelece conexão antecipada com o YouTube e baixa a imagem principal -->
     <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
     <link rel="preload" as="image" href="https://i.ytimg.com/vi/nkpXAkHCN9c/maxresdefault.jpg" fetchpriority="high">
     
@@ -34,14 +35,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- FONTES ASSÍNCRONAS (Performance Optimization) -->
-    <!-- Carrega a fonte de forma não bloqueante para melhorar o FCP -->
+    <!-- Carrega a fonte de forma não bloqueante usando a estratégia media hack -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link 
-      rel="preload" 
+      rel="stylesheet" 
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" 
-      as="style" 
-      onload="this.onload=null;this.rel='stylesheet'"
+      media="print" 
+      onload="this.media='all'"
     >
     <noscript>
       <link 
@@ -93,12 +94,12 @@
       ]
     }
     </script>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
     "vite": "https://aistudiocdn.com/vite@^7.2.4",
     "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"

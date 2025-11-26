@@ -26,7 +26,7 @@ export const YouTubeFacade: React.FC<YouTubeFacadeProps> = ({ videoId, title = "
               LCP OPTIMIZATION:
               1. Exact URL match with <link rel="preload"> in index.html
               2. No opacity transitions (removed group-hover:opacity)
-              3. Strict priority attributes
+              3. Strict priority attributes (fetchPriority="high")
           */}
           <img 
             src="https://i.ytimg.com/vi/nkpXAkHCN9c/maxresdefault.jpg" 
