@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from './Button';
 import { CheckCircle, ShieldCheck, PlayCircle, MessageCircle } from 'lucide-react';
 import { PaymentIcons } from './PaymentIcons';
+import { YouTubeFacade } from './YouTubeFacade';
 
 export const Hero: React.FC = () => {
   const handleBuy = () => {
@@ -21,7 +22,7 @@ export const Hero: React.FC = () => {
           <span className="inline-block py-1 px-3 rounded-full bg-rose-900/50 text-rose-200 text-xs md:text-sm font-semibold tracking-wide border border-rose-500/30 mb-2">
             MÉTODO VALIDADO
           </span>
-          <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+          <h1 className="text-lg sm:text-lg md:text-5xl lg:text-6xl font-extrabold leading-tight">
             Seu Green Card por casamento, <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-100 to-white">
               do jeito certo e simples.
@@ -49,19 +50,9 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Video Wrapper */}
+        {/* Video Wrapper with Facade Optimization */}
         <div className="relative w-full max-w-4xl mx-auto bg-slate-900 rounded-xl overflow-hidden shadow-2xl border border-rose-900 mb-10 aspect-video">
-           <iframe 
-            width="100%" 
-            height="100%" 
-            src="https://www.youtube.com/embed/nkpXAkHCN9c?si=s5qLibIbp6ivHrK7" 
-            title="YouTube video player" 
-            frameBorder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerPolicy="strict-origin-when-cross-origin" 
-            allowFullScreen
-            className="absolute inset-0"
-          ></iframe>
+           <YouTubeFacade videoId="nkpXAkHCN9c" title="Vídeo de Apresentação Green Card Simplificado" />
         </div>
 
         {/* CTA Area */}

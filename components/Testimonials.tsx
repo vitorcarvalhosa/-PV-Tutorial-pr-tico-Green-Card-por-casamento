@@ -1,5 +1,61 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from './Button';
+import { Play } from 'lucide-react';
+
+interface LazyVideoCardProps {
+    src: string;
+    title: string;
+    quote: string;
+}
+
+// Internal component to handle lazy-video interaction (Facade pattern for MP4)
+const LazyVideoCard: React.FC<LazyVideoCardProps> = ({ src, title, quote }) => {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    const handlePlay = () => {
+        if (videoRef.current) {
+            videoRef.current.play();
+            setIsPlaying(true);
+        }
+    };
+
+    return (
+        <div className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-rose-500/50 transition-colors group flex flex-col h-full">
+            <div className="aspect-[9/16] bg-black relative">
+                <video 
+                    ref={videoRef}
+                    preload="metadata" // Need metadata for the #t=0.1 thumbnail to work
+                    className="w-full h-full object-cover"
+                    controls={isPlaying}
+                    playsInline
+                    onPause={() => setIsPlaying(false)}
+                    onPlay={() => setIsPlaying(true)}
+                >
+                    <source src={`${src}#t=0.1`} type="video/mp4" />
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+
+                {/* Custom Play Button Overlay - Disappears when playing */}
+                {!isPlaying && (
+                    <button 
+                        onClick={handlePlay}
+                        className="absolute inset-0 w-full h-full flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors z-10 cursor-pointer"
+                        aria-label={`Reproduzir depoimento: ${title}`}
+                    >
+                        <div className="w-16 h-16 bg-rose-600/90 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300 backdrop-blur-sm">
+                            <Play className="w-8 h-8 text-white fill-white ml-1" />
+                        </div>
+                    </button>
+                )}
+            </div>
+            <div className="p-4 md:p-6 flex-1 flex flex-col justify-center">
+                <h3 className="font-bold text-lg text-rose-400 mb-2 leading-tight">{title}</h3>
+                <p className="text-sm text-slate-300">{quote}</p>
+            </div>
+        </div>
+    );
+};
 
 export const Testimonials: React.FC = () => {
   const handleWhatsapp = () => {
@@ -14,6 +70,24 @@ export const Testimonials: React.FC = () => {
     "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedbacks-5.jpg",
     "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Feedback-6.png",
     "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/IMG_7725.jpg"
+  ];
+
+  const videos = [
+      {
+          src: "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345389562.mp4",
+          title: "“Green Card aprovado em 4 meses”",
+          quote: "Se não fosse pela Gleice, provavelmente ela não teria conseguido tão rápido."
+      },
+      {
+          src: "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345400912.mp4",
+          title: "“A Gleice me deu muita clareza e tranquilidade”",
+          quote: "O juridiquês é muito difícil, mas a Gleice faz questão de simplificar tudo pra gente."
+      },
+      {
+          src: "https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345408958.mp4",
+          title: "“Agora posso dizer que sou uma residente permanente”",
+          quote: "Graças a Gleice esse sonho se realizou e foi muito importante ela estar do meu lado."
+      }
   ];
 
   return (
@@ -51,60 +125,14 @@ export const Testimonials: React.FC = () => {
 
         {/* Video Testimonials */}
         <div className="grid md:grid-cols-3 gap-8 md:gap-8 mb-10 md:mb-12">
-            
-            {/* Video 1 */}
-            <div className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-rose-500/50 transition-colors group">
-                <div className="aspect-[9/16] bg-black relative">
-                    <video 
-                        controls 
-                        preload="metadata"
-                        className="w-full h-full object-cover"
-                    >
-                        <source src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345389562.mp4#t=0.1" type="video/mp4" />
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
-                </div>
-                <div className="p-4 md:p-6">
-                    <h3 className="font-bold text-lg text-rose-400 mb-2">“Green Card aprovado em 4 meses”</h3>
-                    <p className="text-sm text-slate-300">Se não fosse pela Gleice, provavelmente ela não teria conseguido tão rápido.</p>
-                </div>
-            </div>
-
-            {/* Video 2 */}
-            <div className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-rose-500/50 transition-colors group">
-                 <div className="aspect-[9/16] bg-black relative">
-                    <video 
-                        controls 
-                        preload="metadata"
-                        className="w-full h-full object-cover"
-                    >
-                        <source src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345400912.mp4#t=0.1" type="video/mp4" />
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
-                </div>
-                <div className="p-4 md:p-6">
-                    <h3 className="font-bold text-lg text-rose-400 mb-2">“A Gleice me deu muita clareza e tranquilidade”</h3>
-                    <p className="text-sm text-slate-300">O juridiquês é muito difícil, mas a Gleice faz questão de simplificar tudo pra gente e deixar tudo fácil para aplicar com clareza e segurança.</p>
-                </div>
-            </div>
-
-            {/* Video 3 */}
-            <div className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-rose-500/50 transition-colors group">
-                 <div className="aspect-[9/16] bg-black relative">
-                    <video 
-                        controls 
-                        preload="metadata"
-                        className="w-full h-full object-cover"
-                    >
-                        <source src="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/video-1-1762345408958.mp4#t=0.1" type="video/mp4" />
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
-                </div>
-                <div className="p-4 md:p-6">
-                    <h3 className="font-bold text-lg text-rose-400 mb-2">“Agora posso dizer que sou uma residente permanente do EUA”</h3>
-                    <p className="text-sm text-slate-300">Acabou de chegar o que eu tanto estava esperando. Graças a Gleice esse sonho se realizou e foi muito importante ela estar do meu lado em todo momento.</p>
-                </div>
-            </div>
+            {videos.map((video, idx) => (
+                <LazyVideoCard 
+                    key={idx}
+                    src={video.src}
+                    title={video.title}
+                    quote={video.quote}
+                />
+            ))}
         </div>
 
         <div className="flex justify-center">
