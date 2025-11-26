@@ -7,7 +7,7 @@ interface YouTubeFacadeProps {
   className?: string;
 }
 
-export const YouTubeFacade: React.FC<YouTubeFacadeProps> = ({ videoId, title = "Video Player", className = "" }) => {
+export const YouTubeFacade: React.FC<YouTubeFacadeProps> = ({ videoId, title = "Vídeo de apresentação", className = "" }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const handlePlay = () => {
@@ -22,18 +22,21 @@ export const YouTubeFacade: React.FC<YouTubeFacadeProps> = ({ videoId, title = "
           className="group absolute inset-0 w-full h-full flex items-center justify-center cursor-pointer focus:outline-none"
           aria-label={`Play ${title}`}
         >
-          {/* Thumbnail Image - OPTIMIZED FOR LCP */}
-          {/* Using i.ytimg.com directly to match preconnect and avoid redirects */}
+          {/* 
+              LCP OPTIMIZATION:
+              1. Exact URL match with <link rel="preload"> in index.html
+              2. No opacity transitions (removed group-hover:opacity)
+              3. Strict priority attributes
+          */}
           <img 
-            src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`} 
+            src="https://i.ytimg.com/vi/nkpXAkHCN9c/maxresdefault.jpg" 
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-            // STRICT PERFORMANCE ATTRIBUTES
+            className="absolute inset-0 w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"
             decoding="sync"
-            width="1280"
-            height="720"
+            width={1280}
+            height={720}
           />
           
           {/* Play Button Overlay */}

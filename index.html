@@ -4,19 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- PERFORMANCE: Preconnect to YouTube Image CDN (Tunnel Rápido) -->
-    <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
-    
-    <!-- PERFORMANCE: Eliminate White Flash (Wine) -->
+    <!-- PERFORMANCE CRÍTICA: Background Color para evitar Flash Branco -->
     <style>body { background-color: #580816; margin: 0; }</style>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TFN54PKD');</script>
-    <!-- End Google Tag Manager -->
+    <!-- PERFORMANCE CRÍTICA: Preconnect e Preload LCP -->
+    <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+    <link rel="preload" as="image" href="https://i.ytimg.com/vi/nkpXAkHCN9c/maxresdefault.jpg" fetchpriority="high">
     
     <!-- Primary SEO -->
     <title>Green Card Simplificado | Aplique para seu Green Card por Casamento Sem Advogado</title>
@@ -26,10 +19,7 @@
     <meta name="author" content="Gleice Oliveira - RG Forms">
     <meta name="robots" content="index, follow">
 
-    <!-- LCP Optimization: Preload Hero Video Thumbnail (Direct CDN) -->
-    <link rel="preload" as="image" href="https://i.ytimg.com/vi/nkpXAkHCN9c/maxresdefault.jpg" fetchpriority="high" crossorigin="anonymous">
-
-    <!-- Favicon (Wine Colored Globe) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23881337' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='2' x2='22' y1='12' y2='12'/%3E%3Cpath d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/%3E%3C/svg%3E" />
 
     <!-- Open Graph / Facebook / WhatsApp -->
@@ -39,14 +29,7 @@
     <meta property="og:description" content="Descubra como aplicar para o seu Green Card por casamento com um método validado, simples e acessível. Checklists, modelos e suporte inclusos.">
     <meta property="og:image" content="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Gleice-Perfil.webp">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://greencardsimplificado.com.br/">
-    <meta property="twitter:title" content="Green Card Simplificado | Aplique Sozinha com Segurança">
-    <meta property="twitter:description" content="Não dependa de advogados caros. Tenha autonomia e segurança para aplicar seu ajuste de status por casamento.">
-    <meta property="twitter:image" content="https://autovmd-wordpress.7uu36r.easypanel.host/wp-content/uploads/2025/11/Gleice-Perfil.webp">
-
-    <!-- Styles & Fonts (Display Swap for Performance) -->
+    <!-- Styles & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,43 +66,6 @@
           }
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "E se eu errar alguma etapa do processo do Green Card?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "O curso foi pensado exatamente para isso. Cada etapa tem checklist, modelos prontos e instruções claras para evitar erros. E se ainda assim você tiver dúvida, o suporte no WhatsApp está disponível para te orientar."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Já estou casada há um tempo. Ainda faz sentido pra mim?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Sim! Mesmo que você já tenha se casado, o processo pode ser iniciado. O conteúdo é válido para quem está em qualquer fase — do início ao envio e entrevista."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "É seguro fazer o processo de Green Card sem advogado?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Com o conhecimento certo, sim. O método ensinado aqui é o mesmo usado na assessoria da Gleice, com 100% de aprovação. A ideia é te dar autonomia com segurança."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Tenho medo de montar o processo de imigração sozinha e ser negada.",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Esse medo é comum, mas é justamente por isso que o curso existe. Ele transforma um processo confuso em algo didático, passo a passo. Com clareza, o medo diminui e a confiança aumenta."
-              }
-            }
-          ]
-        },
-        {
             "@type": "Person",
             "name": "Gleice Oliveira",
             "jobTitle": "Especialista em Processos de Imigração",
@@ -131,21 +77,6 @@
       ]
     }
     </script>
-    
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '749395778096315');
-    fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
 <script type="importmap">
 {
   "imports": {
@@ -160,17 +91,6 @@
 </script>
 </head>
   <body>
-    <!-- Meta Pixel Code (noscript) - MOVED TO TOP OF BODY FOR VITE/PERFORMANCE -->
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=749395778096315&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code (noscript) -->
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFN54PKD"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
