@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- PERFORMANCE: Preconnect to YouTube Image CDN (Tunnel Rápido) -->
+    <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+    
+    <!-- PERFORMANCE: Eliminate White Flash (Wine) -->
+    <style>body { background-color: #580816; margin: 0; }</style>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -20,8 +26,8 @@
     <meta name="author" content="Gleice Oliveira - RG Forms">
     <meta name="robots" content="index, follow">
 
-    <!-- LCP Optimization: Preload Hero Video Thumbnail -->
-    <link rel="preload" as="image" href="https://img.youtube.com/vi/nkpXAkHCN9c/maxresdefault.jpg" fetchpriority="high">
+    <!-- LCP Optimization: Preload Hero Video Thumbnail (Direct CDN) -->
+    <link rel="preload" as="image" href="https://i.ytimg.com/vi/nkpXAkHCN9c/maxresdefault.jpg" fetchpriority="high">
 
     <!-- Favicon (Wine Colored Globe) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23881337' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='2' x2='22' y1='12' y2='12'/%3E%3Cpath d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/%3E%3C/svg%3E" />
@@ -145,8 +151,8 @@
   "imports": {
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
     "vite": "https://aistudiocdn.com/vite@^7.2.4",
     "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
@@ -154,17 +160,17 @@
 </script>
 </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFN54PKD"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
-    <!-- Meta Pixel Code (noscript) -->
+    <!-- Meta Pixel Code (noscript) - MOVED TO TOP OF BODY FOR VITE/PERFORMANCE -->
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=749395778096315&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code (noscript) -->
 
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFN54PKD"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

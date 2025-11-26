@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
           <span className="inline-block py-1 px-3 rounded-full bg-rose-900/50 text-rose-200 text-xs md:text-sm font-semibold tracking-wide border border-rose-500/30 mb-2">
             MÉTODO VALIDADO
           </span>
-          <h1 className="text-lg sm:text-lg md:text-5xl lg:text-6xl font-extrabold leading-tight">
+          <h1 className="text-lg sm:text-lg md:text-4xl lg:text-5xl font-extrabold leading-tight">
             Seu Green Card por casamento, <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-100 to-white">
               do jeito certo e simples.

@@ -23,10 +23,12 @@ export const YouTubeFacade: React.FC<YouTubeFacadeProps> = ({ videoId, title = "
           aria-label={`Play ${title}`}
         >
           {/* Thumbnail Image - OPTIMIZED FOR LCP */}
+          {/* Using i.ytimg.com directly to match preconnect and avoid redirects */}
           <img 
-            src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`} 
+            src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`} 
             alt={title}
             className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+            // STRICT PERFORMANCE ATTRIBUTES
             loading="eager"
             fetchPriority="high"
             decoding="sync"
