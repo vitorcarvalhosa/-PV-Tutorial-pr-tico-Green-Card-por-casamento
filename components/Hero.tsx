@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
           <span className="inline-block py-1 px-3 rounded-full bg-rose-900/50 text-rose-200 text-xs md:text-sm font-semibold tracking-wide border border-rose-500/30 mb-2">
             MÉTODO VALIDADO
           </span>
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
+          <h1 className="text-lg md:text-4xl lg:text-5xl font-extrabold leading-tight">
             Seu Green Card por casamento, <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-100 to-white">
               do jeito certo e simples.
@@ -80,7 +80,7 @@ export const Hero: React.FC = () => {
              <Button 
                 onClick={handleWhatsapp} 
                 variant="outline"
-                className="text-lg md:text-xl px-6 py-4 md:px-10 md:py-5 w-full md:w-auto border-emerald-400 text-emerald-400 hover:bg-emerald-900/20 hover:text-emerald-300 hover:border-emerald-300"
+                className="text-lg md:text-xl px-6 py-4 md:px-10 md:py-5 w-full md:w-auto border-emerald-400 text-white hover:bg-emerald-900/20 hover:text-emerald-200 hover:border-emerald-300"
             >
                 Quero tirar dúvida no WhatsApp
             </Button>
