@@ -14,8 +14,8 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative bg-rose-950 text-white pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
-      <div className="container mx-auto px-4 max-w-5xl">
+    <section className="relative bg-rose-950 text-white pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden content-visibility-auto">
+      <div className="container mx-auto px-4 max-w-5xl relative z-10">
         
         {/* Headline */}
         <div className="text-center mb-8 space-y-4">
@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
           </p>
         </div>
 
-        {/* Video Bullets (Moved above video, vertical list) */}
+        {/* Video Bullets (Vertical list above video) */}
         <div className="max-w-3xl mx-auto flex flex-col gap-3 mb-8 text-sm md:text-lg text-rose-100/90">
           <div className="flex items-start gap-3">
             <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-emerald-400 shrink-0 mt-0.5" />
@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Video Wrapper with Facade Optimization */}
+        {/* Video Wrapper with Facade Optimization (LCP Element) */}
         <div className="relative w-full max-w-4xl mx-auto bg-slate-900 rounded-xl overflow-hidden shadow-2xl border border-rose-900 mb-10 aspect-video">
            <YouTubeFacade videoId="nkpXAkHCN9c" title="Vídeo de Apresentação Green Card Simplificado" />
         </div>
@@ -75,7 +75,7 @@ export const Hero: React.FC = () => {
             <span className="flex items-center gap-1">⚡ <span className="text-white">Acesso imediato</span></span>
           </div>
 
-           {/* WhatsApp Button (Moved below features) */}
+           {/* WhatsApp Button */}
           <div className="mt-4 w-full md:w-auto">
              <Button 
                 onClick={handleWhatsapp} 
@@ -89,7 +89,7 @@ export const Hero: React.FC = () => {
 
       </div>
       
-      {/* Background decoration */}
+      {/* Background decoration - CSS Only, no images for performance */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-rose-600/10 rounded-full blur-[100px]"></div>
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-slate-800/20 rounded-full blur-[100px]"></div>
